@@ -35,6 +35,7 @@ class BestSellersTable extends React.Component {
 
   componentDidMount() {
     fetch('https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction&api-key=' + process.env.REACT_APP_NYTIMES_KEY)
+      .then(response => response.json())
       .then(
         (result) => {
           this.setState({
@@ -54,15 +55,13 @@ class BestSellersTable extends React.Component {
         <table>
           <thead>
             <tr>
-              <th>Ranking</th>
-              <th>Book</th>
+              <th>Rank</th>
+              <th>Book Details</th>
               <th>Last Week’s Rank</th>
               <th>Weeks on List</th>
             </tr>
           </thead>
-          <tbody>
-            <BestSeller books={this.state.books} />
-          </tbody>
+          <BestSeller books={this.state.books} />
         </table>
       );
     } else {
@@ -74,20 +73,33 @@ class BestSellersTable extends React.Component {
 }
 
 class BestSeller extends React.Component {
+  renderRow() {
+    let rows = [];
+
+    for (let i=0; i<this.props.books.length; i++) {
+      let book = this.props.books[i];
+      let details = book.book_details[0];
+
+      rows.push(
+        <tr key={i}>
+          <td>{i + 1}</td>
+          <td>
+            <div className="title">{details.title}</div>
+            <div className="author">by {details.author}</div>
+            <div className="description">{details.description}</div>
+          </td>
+          <td>{book.rank_last_week}</td>
+          <td>{book.weeks_on_list}</td>
+        </tr>
+      );
+    }
+
+    return rows;
+  }
+
   render() {
     return(
-      <tr>
-        <td>1</td>
-        <td>
-          <div>
-            <div className="title">AN ANONYMOUS GIRL</div>
-            <div className="author">by Greer Hendricks and Sarah Pekkanen</div>
-            <div className="description">Jessica Farris’s life unravels when she signs up for Dr. Shields’s psychology study.</div>
-          </div>
-        </td>
-        <td>1</td>
-        <td>10</td>
-      </tr>
+      <tbody>{this.renderRow()}</tbody>
     );
   }
 }
