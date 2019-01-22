@@ -32,7 +32,7 @@ class BestSellersTable extends React.Component {
           <tr>
             <th>Ranking</th>
             <th>Book</th>
-            <th>Last Week's Rank</th>
+            <th>Last Week’s Rank</th>
             <th>Weeks on List</th>
           </tr>
         </thead>
