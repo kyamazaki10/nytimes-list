@@ -18,6 +18,10 @@ table td {
   vertical-align: top;
 }
 
+.date {
+  margin-left: 1em;
+}
+
 .best-sellers {
   width: 80%;
   margin: 0 auto;
