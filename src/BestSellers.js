@@ -12,7 +12,7 @@ class BestSellers extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="best-sellers">
         <div className="date">{this.state.date}</div>
         <BestSellersTable date={this.state.date} />
       </div>

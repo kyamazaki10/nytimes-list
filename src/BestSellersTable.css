@@ -7,3 +7,8 @@ table td {
   padding: 1em;
   vertical-align: top;
 }
+
+.loading {
+  margin: 1em 0 0 1em;
+  color: #999;
+}
