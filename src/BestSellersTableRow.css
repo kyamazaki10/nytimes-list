@@ -1,0 +1,13 @@
+.title {
+  font-size: 1.2em;
+}
+
+.author {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.description {
+  font-size: 0.8em;
+  color: #666;
+}
