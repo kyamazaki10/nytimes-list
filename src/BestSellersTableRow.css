@@ -1,12 +1,7 @@
-.title {
-  font-size: 1.2em;
+.best-sellers .author {
+  margin-top: -0.4em;
 }
 
-.author {
-  font-style: italic;
-}
-
-.description {
-  color: #666;
-  margin-top: 1em;
+.best-sellers .description {
+  margin-top: 0.6em;
 }
