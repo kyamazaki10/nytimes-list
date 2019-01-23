@@ -1,0 +1,13 @@
+.date-paper {
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.date-paper span {
+  vertical-align: bottom;
+}
+
+.date-picker {
+  display: inline-block;
+  margin-left: 0.5em;
+}

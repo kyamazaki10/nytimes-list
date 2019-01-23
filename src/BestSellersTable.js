@@ -17,7 +17,21 @@ class BestSellersTable extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction&api-key=' + process.env.REACT_APP_NYTIMES_KEY)
+    this.fetchBooks();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.date !== prevProps.date) {
+      this.fetchBooks();
+    }
+  }
+
+  fetchBooks() {
+    let url = 'https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction';
+    url += '&api-key=' + process.env.REACT_APP_NYTIMES_KEY;
+    url += '&published-date=' + this.props.date;
+
+    fetch(url)
       .then(response => response.json())
       .then(
         (result) => {
