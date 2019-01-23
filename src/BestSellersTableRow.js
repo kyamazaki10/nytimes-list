@@ -1,8 +1,10 @@
 import React from 'react';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 import './BestSellersTableRow.css';
 
 class BestSellersTableRow extends React.Component {
-  renderRow() {
+  render() {
     let rows = [];
 
     for (let i=0; i<this.props.books.length; i++) {
@@ -10,26 +12,20 @@ class BestSellersTableRow extends React.Component {
       let details = book.book_details[0];
 
       rows.push(
-        <tr key={i}>
-          <td>{i + 1}</td>
-          <td>
+        <TableRow hover key={i}>
+          <TableCell>{i + 1}</TableCell>
+          <TableCell>
             <div className="title">{details.title}</div>
             <div className="author">by {details.author}</div>
             <div className="description">{details.description}</div>
-          </td>
-          <td>{book.rank_last_week}</td>
-          <td>{book.weeks_on_list}</td>
-        </tr>
+          </TableCell>
+          <TableCell>{book.rank_last_week}</TableCell>
+          <TableCell>{book.weeks_on_list}</TableCell>
+        </TableRow>
       );
     }
 
     return rows;
-  }
-
-  render() {
-    return(
-      <tbody>{this.renderRow()}</tbody>
-    );
   }
 }
 

@@ -1,7 +1,12 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
 
 function Header() {
-  return <h1>The New York Times Best Sellers List</h1>;
+  return (
+    <Typography component="h1" variant="h2" gutterBottom>
+      The New York Times Best Sellers List
+    </Typography>
+  );
 }
 
 export default Header;
