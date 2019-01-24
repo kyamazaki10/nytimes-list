@@ -1,0 +1,11 @@
+.about {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 3em;
+  text-align: left;
+}
+
+.about-paper {
+  padding: 1em;
+  margin-bottom: 2em;
+}
