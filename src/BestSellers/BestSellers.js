@@ -27,13 +27,13 @@ class BestSellers extends React.Component {
   }
 
   formatDatePadding(number) {
-    return number.toString().padStart(2, "0");
+    return number.toString().padStart(2, '0');
   }
 
   render() {
     return(
       <div className="best-sellers">
-        <BestSellersDatePicker date={this.state.date} changeDate={this.changeDate} />
+        <BestSellersDatePicker date={this.state.date} onChange={this.changeDate} />
         <BestSellersTable date={this.state.date} />
       </div>
     );

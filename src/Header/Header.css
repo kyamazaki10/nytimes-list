@@ -1,9 +1,4 @@
-header .icon {
+header .menu-button {
+  margin: 1em;
   color: #FFF;
-}
-
-header .category {
-  color: #FFF;
-  font-weight: normal;
-  margin-left: 1em;
 }

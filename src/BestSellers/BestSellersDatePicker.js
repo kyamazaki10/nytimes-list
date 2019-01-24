@@ -12,7 +12,7 @@ class BestSellersDatePicker extends React.Component {
   }
 
   handleDateChange(e) {
-    this.props.changeDate(e.target.value);
+    this.props.onChange(e.target.value);
   }
 
   render() {

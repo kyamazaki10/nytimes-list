@@ -1,24 +1,68 @@
 import React from 'react';
+import HeaderMenu from './HeaderMenu.js';
 import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import './Header.css';
 
-function Header() {
-  return (
-    <AppBar color="primary">
-      <Toolbar>
-        <IconButton aria-label="Menu" className="icon">
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" className="category">
-          Hardcover Fiction
-        </Typography>
-      </Toolbar>
-    </AppBar>
-  );
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nonfiction: null,
+      fiction: null,
+      children: null
+    }
+
+    this.handleMenuClick = this.handleMenuClick.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
+  handleMenuClick(e) {
+    this.setState({
+      [e.currentTarget.id]: e.currentTarget
+    });
+  }
+
+  handleClose() {
+    for (let key in this.state) {
+      if (this.state[key] !== null) {
+        this.setState({
+          [key]: null
+        });
+      }
+    }
+  }
+
+  renderMenu() {
+    const categories = [
+      { id: 'nonfiction', name: 'Nonfiction' },
+      { id: 'fiction', name: 'Fiction' },
+      { id: 'children', name: 'Children’s' }
+    ];
+    let menu = [];
+
+    for (let category of categories) {
+      menu.push(
+        <div key={category.id}>
+          <Button onClick={this.handleMenuClick} aria-label={category.name} id={category.id} className="menu-button">{category.name}</Button>
+          <HeaderMenu id={category.id} anchorEl={this.state[category.id]} onClose={this.handleClose} />
+        </div>
+      );
+    }
+
+    return menu;
+  }
+
+  render() {
+    return (
+      <AppBar color="primary">
+        <Toolbar>
+          {this.renderMenu()}
+        </Toolbar>
+      </AppBar>
+    );
+  }
 }
 
 export default Header;
