@@ -7,14 +7,19 @@ class HeaderMenu extends React.Component {
     super(props);
 
     this.handleClose = this.handleClose.bind(this);
+    this.handleSubcategoryClick = this.handleSubcategoryClick.bind(this);
   }
 
   handleClose() {
     this.props.onClose();
   }
 
-  getCategories(category) {
-    const categories = {
+  handleSubcategoryClick(e) {
+    this.props.onClick(e.currentTarget.id);
+  }
+
+  getSubcategories(category) {
+    const subcategories = {
       nonfiction: [
         {
           name: 'Combined Print and E-Book Nonfiction',
@@ -71,15 +76,15 @@ class HeaderMenu extends React.Component {
       ]
     };
 
-    return categories[category];
+    return subcategories[category];
   }
 
   renderMenuItem(category) {
-    const categories = this.getCategories(category);
+    const subcategories = this.getSubcategories(category);
     let items = [];
 
-    for (let cat of categories) {
-      items.push(<MenuItem key={cat.id}>{cat.name}</MenuItem>);
+    for (let subcategory of subcategories) {
+      items.push(<MenuItem key={subcategory.id} id={subcategory.id} onClick={this.handleSubcategoryClick}>{subcategory.name}</MenuItem>);
     }
 
     return items;

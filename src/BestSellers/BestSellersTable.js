@@ -21,14 +21,15 @@ class BestSellersTable extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.date !== prevProps.date) {
+    if (this.props.date !== prevProps.date || this.props.subcategory !== prevProps.subcategory) {
       this.fetchBooks();
     }
   }
 
   fetchBooks() {
-    let url = 'https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction';
-    url += '&api-key=' + process.env.REACT_APP_NYTIMES_KEY;
+    let url = 'https://api.nytimes.com/svc/books/v3/lists.json';
+    url += '?api-key=' + process.env.REACT_APP_NYTIMES_KEY;
+    url += '&list=' + this.props.subcategory;
     url += '&published-date=' + this.props.date;
 
     fetch(url)

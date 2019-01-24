@@ -14,14 +14,19 @@ class Header extends React.Component {
       children: null
     }
 
-    this.handleMenuClick = this.handleMenuClick.bind(this);
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
+    this.handleSubcategoryClick = this.handleSubcategoryClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
 
-  handleMenuClick(e) {
+  handleCategoryClick(e) {
     this.setState({
       [e.currentTarget.id]: e.currentTarget
     });
+  }
+
+  handleSubcategoryClick(id) {
+    this.props.onClick(id);
   }
 
   handleClose() {
@@ -45,8 +50,8 @@ class Header extends React.Component {
     for (let category of categories) {
       menu.push(
         <div key={category.id}>
-          <Button onClick={this.handleMenuClick} aria-label={category.name} id={category.id} className="menu-button">{category.name}</Button>
-          <HeaderMenu id={category.id} anchorEl={this.state[category.id]} onClose={this.handleClose} />
+          <Button id={category.id} onClick={this.handleCategoryClick} aria-label={category.name} className="menu-button">{category.name}</Button>
+          <HeaderMenu id={category.id} anchorEl={this.state[category.id]} onClick={this.handleSubcategoryClick} onClose={this.handleClose} />
         </div>
       );
     }

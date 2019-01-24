@@ -34,7 +34,7 @@ class BestSellers extends React.Component {
     return(
       <div className="best-sellers">
         <BestSellersDatePicker date={this.state.date} onChange={this.changeDate} />
-        <BestSellersTable date={this.state.date} />
+        <BestSellersTable date={this.state.date} subcategory={this.props.subcategory} />
       </div>
     );
   }
