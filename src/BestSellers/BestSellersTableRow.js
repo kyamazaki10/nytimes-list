@@ -33,4 +33,8 @@ class BestSellersTableRow extends React.Component {
   }
 }
 
+BestSellersTableRow.defaultProps = {
+  books: []
+};
+
 export default BestSellersTableRow;
