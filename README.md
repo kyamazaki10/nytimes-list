@@ -1,3 +1,25 @@
+# The New York Times Best Sellers
+
+This project can be viewed at [https://kyamazaki10.github.io/nytimes-list/](https://kyamazaki10.github.io/nytimes-list/).
+
+Best Sellers are broken down by category and date using [The New York Times Books API](https://developer.nytimes.com/docs/books-product/1/overview).
+
+To get started:
+
+```
+npm install
+cp .env .env.development.local
+```
+
+Sign up for a developer account for The New York Times and enter your application key to the `.env.development.local` file.
+
+Run locally at [http://localhost:3000/nytimes-list](http://localhost:3000/nytimes-list):
+```
+npm start
+```
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

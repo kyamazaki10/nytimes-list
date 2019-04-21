@@ -7,8 +7,8 @@ import App from './App/App.js';
 ReactDOM.render((
   <Router>
     <div>
-      <Route exact path='/' component={App} />
-      <Route path='/about' component={About} />
+      <Route exact path='/nytimes-list/' component={App} />
+      <Route path='/nytimes-list/about' component={About} />
     </div>
   </Router>
 ), document.getElementById('root'));
