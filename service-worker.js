@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/kyamazaki10/nytimes-list/precache-manifest.e635a374bcd24f492be1eb5ad1f0827c.js"
+  "/nytimes-list/precache-manifest.3a0832914dec0fdddbfb77cf254eb37d.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/kyamazaki10/nytimes-list/index.html", {
+workbox.routing.registerNavigationRoute("/nytimes-list/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
