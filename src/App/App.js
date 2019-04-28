@@ -1,5 +1,6 @@
 import React from 'react';
 import BestSellers from '../BestSellers/BestSellers.js';
+import Footer from '../Footer/Footer.js';
 import Header from '../Header/Header.js';
 import './App.css';
 
@@ -24,6 +25,7 @@ class App extends React.Component {
       <div>
         <Header onClick={this.changeSubcategory} />
         <BestSellers subcategory={this.state.subcategory} />
+        <Footer />
       </div>
     );
   }
