@@ -30,7 +30,7 @@ class Header extends React.Component {
   render() {
     return (
       <AppBar color="primary">
-        <Toolbar>
+        <Toolbar className="header-content">
           {this.renderMenu()}
         </Toolbar>
       </AppBar>

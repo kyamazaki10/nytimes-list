@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import BestSellers from '../BestSellers/BestSellers.js';
 import Footer from '../Footer/Footer.js';
 import Header from '../Header/Header.js';
@@ -22,11 +22,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <Header onClick={this.changeSubcategory} />
         <BestSellers subcategory={this.state.subcategory} />
         <Footer />
-      </div>
+      </Fragment>
     );
   }
 }
