@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/nytimes-list/static/js/runtime~main.90bcc79e.js"
   },
   {
-    "revision": "e0d29f323520ea03a86d",
-    "url": "/nytimes-list/static/js/main.e0d29f32.chunk.js"
+    "revision": "323b6ede22c2f7ea253a",
+    "url": "/nytimes-list/static/js/main.323b6ede.chunk.js"
   },
   {
     "revision": "15c9d736950a08f9cc5a",
     "url": "/nytimes-list/static/js/1.15c9d736.chunk.js"
   },
   {
-    "revision": "e0d29f323520ea03a86d",
-    "url": "/nytimes-list/static/css/main.8377bb98.chunk.css"
+    "revision": "323b6ede22c2f7ea253a",
+    "url": "/nytimes-list/static/css/main.2f3fd12e.chunk.css"
   },
   {
-    "revision": "c66f82161ef894a26c016d60208caae7",
+    "revision": "8dd1cf28448fcb380fb159312a3a45ec",
     "url": "/nytimes-list/index.html"
   }
 ];
